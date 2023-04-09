@@ -8,7 +8,7 @@ public class Aplicacion {
 
     public static void main(String[] args) {
         Turismo turismo = new Turismo(new ArrayList<>());
-        DatosCliente clienteDePrueba=new DatosCliente();
+
 
       int opcion;
         do{
