@@ -265,7 +265,7 @@ public class Turismo {
                     //verifico si el adicional se tiene que pagar o no.
                     if (adicional == null) {
                     } else {
-                        System.out.println("El total a pagar es: " + adicional);
+                        System.out.println("El adicional a pagar es: " + adicional);
 
                     }
 

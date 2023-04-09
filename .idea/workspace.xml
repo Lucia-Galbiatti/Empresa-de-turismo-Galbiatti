@@ -5,20 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7136ae62-f503-4883-88bb-890086377c81" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Empresa de turismo.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Aplicacion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controlador/Turismo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Modelo/Cabaña.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Modelo/Carpa.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Modelo/DatosCliente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Modelo/Hospedaje.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Modelo/Hotel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Modelo/MediodeAlojamiento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controlador/Turismo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controlador/Turismo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
