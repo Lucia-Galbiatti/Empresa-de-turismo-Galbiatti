@@ -25,14 +25,14 @@ public class Turismo {
         Scanner sc = new Scanner(System.in);
         //Creamos el scanner para poder tomar los valores que me pasa el usuario
         System.out.println("Bienvenidos a Empresa Turismo! Elige a partir de las siguientes opciones: ");
-        System.out.println("1.\tIngresar Medio de Alojamiento (almacena un objeto de tipo Carpa/Cabaña/Hotel en la colección, siempre que no exista, es decir solo se puede asociar un cliente por medio de alojamiento.)\n" +
-                "2.\tMostrar medios de alojamiento (muestra datos de todos los objetos almacenados)\t\n" +
-                "3.\tDatos de un cliente X (si existe, muestra donde está alojado y todos los datos asociados)\n" +
-                "4.\tTotal adicional\n" +
-                "5.\tTotal bono descuento\n" +
+        System.out.println("1.\tIngresar Medio de Alojamiento \n" +
+                "2.\tMostrar medios de alojamiento\t\n" +
+                "3.\tMostrar datos de un cliente\n" +
+                "4.\tCalcular total adicional\n" +
+                "5.\tCalcular total bono descuento\n" +
                 "6.\tCantidad medios de alojamiento X\n" +
-                "7.\tValor a cancelar por un cliente X (el cliente debe existir)\n" +
-                "8.\tAplicar incremento del valor base (donde corresponda)     \t\t\t\t\n" +
+                "7.\tValor a cancelar por un cliente \n" +
+                "8.\tAplicar incremento del valor base\t\t\t\t\n" +
                 "9.\tSalir.");
         //creamos un int para guardar el valor enviado por el usuario, next int significa proximo int ingresado por teclado
         Integer valor = sc.nextInt();
@@ -239,6 +239,8 @@ public class Turismo {
                 System.out.println("El alojamiento en el cual se encuentra el cliente es: " + mediodeAlojamiento.getTipoAlojamiento());
                 System.out.println("el Nombre del " + mediodeAlojamiento.getTipoAlojamiento() + " en el cual se queda es: " + mediodeAlojamiento.getNombre());
                 System.out.println("el valor base de la noche es: " + mediodeAlojamiento.getValorbasenoche());
+            } else{
+                System.out.println("El cliente que usted ha ingresado no existe.");
             }
 
         }
@@ -321,7 +323,9 @@ public class Turismo {
     }
 
     public void buscarAlojamientoEspecifico(Integer num) {
-        int cantidad=0;
+        int contadorcabaña = 0;
+        int contadorhotel = 0;
+        int contadorcarpa = 0;
         //si hay 0 alojamientos, le digo que agregue
         if (alojamiento.size() == 0) {
             System.out.println("No hay alojamientos disponibles aun, Agregue uno en la opcion 1");
@@ -331,28 +335,43 @@ public class Turismo {
             mediodeAlojamiento = alojamiento.get(i);
 //contamos la cantidad dependiendo de que tipo de alojamiento sean
 
+            switch (num) {
+                case 1:
+                    if (mediodeAlojamiento instanceof Cabaña) {
+                        contadorcabaña = contadorcabaña + 1;
+                    }
+                    break;
+                case 2:
+                    if (mediodeAlojamiento instanceof Hotel) {
+                        contadorhotel = contadorhotel + 1;
+                        break;
+                    }
+                case 3:
+                    if (mediodeAlojamiento instanceof Carpa) {
+                        contadorcarpa = contadorcarpa + 1;
+                        break;
+                    }
+
+            }
+        }
+        //otro switch para devolver el contador correcto
         switch (num) {
             case 1:
-                if (mediodeAlojamiento instanceof Cabaña){
-                    cantidad=cantidad + 1;
-                }
+                System.out.println("la cantidad es de : " + contadorcabaña);
+
                 break;
             case 2:
-                if (mediodeAlojamiento instanceof Hotel){
-                    cantidad=cantidad + 1;
-                    break;
-                }
+                System.out.println("la cantidad es de : " + contadorhotel);
+
+                break;
+
             case 3:
-                if (mediodeAlojamiento instanceof Carpa){
-                    cantidad=cantidad + 1;
-                    break;
-                }
+                System.out.println("la cantidad es de : " + contadorcarpa);
+
+                break;
 
         }
-        }
-    System.out.println("la cantidad es de : " + cantidad);
     }
-
     public void calcularTOTAL(String nombreCliente){
      if (alojamiento.size() == 0) {
         System.out.println("No hay personas añadidas aun para calcular el total a cancelar, Agregue a traves en la opcion 1");
@@ -426,6 +445,8 @@ public void aumentoValorBase(String nombreCliente) {
                     System.out.println("No le corresponde pagar un monto mayor ya que no son mas de 5 personas");
 
                 }
+            } else{
+                System.out.println("A su tipo de alojamiento no le corresponde un aumento del valor base, solo a cabañas");
             }
         }
     }
