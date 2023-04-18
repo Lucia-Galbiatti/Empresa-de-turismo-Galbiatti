@@ -69,7 +69,7 @@ public Integer Subtotal (Integer cantidaddenoches, Integer valorbasenoche){
 public Double Adicional (Integer subtotal, boolean fumador, boolean desayuno) {
     Double adicional = null;
     if (fumador == true ||desayuno == true ) {
-            adicional = (subtotal * 0.3);
+            adicional = (double) (subtotal + Math.round(subtotal * 0.3));
     }
     return adicional;
 }

@@ -448,6 +448,8 @@ public void aumentoValorBase(String nombreCliente) {
             } else{
                 System.out.println("A su tipo de alojamiento no le corresponde un aumento del valor base, solo a cabañas");
             }
+        } else {
+            System.out.println("El cliente que usted ha ingresado, no existe!");
         }
     }
 }
